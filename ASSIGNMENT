@@ -1,0 +1,23 @@
+// C++ code
+//
+float temp;
+void setup()
+{
+  pinMode(8, INPUT);
+  pinMode(A5, INPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(13,digitalRead(8));
+  digitalWrite(12,digitalRead(8));
+  temp=analogRead(A5);
+  temp=temp*0.48828125;
+  Serial.print("temperature");
+  Serial.print(temp);
+  Serial.println();
+  	delay(1000);
+}
